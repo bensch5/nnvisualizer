@@ -3,10 +3,10 @@ from pyray import *
 import json
 
 # configuration
-DISTANCE_X, DISTANCE_Y = 400, 50  # distances inbetween neurons
+DISTANCE_X, DISTANCE_Y = 400, 100  # distances inbetween neurons
 MULT_CONN = 5  # factor by which line thickness for connections is multiplied
-RADIUS = 20  # size/radius of each neuron
-FONT_SIZE = 16  # font size
+RADIUS = 30  # size/radius of each neuron
+FONT_SIZE = 10  # font size
 
 
 def main():
@@ -44,15 +44,15 @@ def main():
                 # draw connections to neurons in previous layer
                 for y_prev, connected in enumerate(connected_list):
                     # figure out starting position for current connection
-                    pos_x = 100 + RADIUS + DISTANCE_X * (x - 1)
+                    pos_x = RADIUS * 2 + DISTANCE_X * (x - 1)
                     # last part of sum: center connections according to the biggest layer
-                    pos_y = 100 + RADIUS + (DISTANCE_Y * y_prev) + ((max_layer - connected_count) / 2) * DISTANCE_Y
+                    pos_y = RADIUS * 2 + (DISTANCE_Y * y_prev) + ((max_layer - connected_count) / 2) * DISTANCE_Y
                     start = Vector2(pos_x, pos_y)
 
                     # figure out ending position for current connection
-                    pos_x = 100 + RADIUS + DISTANCE_X * x
+                    pos_x = RADIUS * 2 + DISTANCE_X * x
                     # last part of sum: center connections according to the biggest layer
-                    pos_y = 100 + RADIUS + (DISTANCE_Y * y) + ((max_layer - neuron_count) / 2) * DISTANCE_Y
+                    pos_y = RADIUS * 2 + (DISTANCE_Y * y) + ((max_layer - neuron_count) / 2) * DISTANCE_Y
                     end = Vector2(pos_x, pos_y)
 
                     # display negative values in red and positive values in blue
@@ -75,9 +75,9 @@ def main():
             # draw neurons in current layer
             for y, neuron in enumerate(neurons):
                 # figure out position for current neuron
-                pos_x = 100 + RADIUS + DISTANCE_X * x
+                pos_x = RADIUS * 2 + DISTANCE_X * x
                 # last part of sum: center neurons according to the biggest layer
-                pos_y = 100 + RADIUS + (DISTANCE_Y * y) + ((max_layer - neuron_count) / 2) * DISTANCE_Y
+                pos_y = RADIUS * 2 + (DISTANCE_Y * y) + ((max_layer - neuron_count) / 2) * DISTANCE_Y
                 center = Vector2(pos_x, pos_y)
 
                 # draw neuron
