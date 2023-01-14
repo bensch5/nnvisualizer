@@ -3,9 +3,9 @@ from pyray import *
 import json
 
 # configuration
-DISTANCE_X, DISTANCE_Y = 400, 200  # distances inbetween neurons
-MULT_CONN = 10  # factor by which line thickness for connections is multiplied
-RADIUS = 50  # size/radius of each neuron
+DISTANCE_X, DISTANCE_Y = 400, 50  # distances inbetween neurons
+MULT_CONN = 5  # factor by which line thickness for connections is multiplied
+RADIUS = 20  # size/radius of each neuron
 FONT_SIZE = 16  # font size
 
 
